@@ -2,6 +2,8 @@
 
 Build | ..... | Peace
 
+Link : https://practice.geeksforgeeks.org/problems/aggressive-cows/1?page=1&difficulty[]=1&difficulty[]=2&category[]=Binary%20Search&sortBy=submissions
+
 */
 
 #include<bits/stdc++.h>
