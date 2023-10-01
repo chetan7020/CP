@@ -38,9 +38,7 @@ int main(){
 			i++;
 		}
 		cout<<ans<<"\n";
-
 	}
-
 	return 0;
 
 }

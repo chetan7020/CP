@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7421e168-c1e0-4516-a7b0-7d8d4fb8da54" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Array/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Array/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary Search/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary Search/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary Search/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary Search/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CF/TenWordsofWisdom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../CF/TenWordsofWisdom.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
+  <component name="ProjectId" id="2V3FFKaP8OVRq1xpBiYlmksinyu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7421e168-c1e0-4516-a7b0-7d8d4fb8da54" name="Changes" comment="" />
+      <created>1694056752645</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694056752645</updated>
+    </task>
+    <servers />
+  </component>
+</project>

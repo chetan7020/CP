@@ -1,1 +1,1 @@
-YES
+Sum of N: 6
