@@ -23,21 +23,17 @@ void firstNegi(){
 	while(j<n){
 		if(a[j]<0) neg.push(a[j]);
 
-		if((j-i+1)<k) j++;
-		else{
-
+		if((j-i+1)<k){
 			if(neg.size()==0) ans.push_back(0);
 			else{
 				int ele = neg.front();
 				ans.push_back(ele);
 			}
-
 			if(a[i]==neg.front()) neg.pop();
 			// cout<<i<<" "<<j<<endl;
-
 			i++;
-			j++; 
 		}
+		j++; 	
 	}
 	for(auto i: ans){
 		cout<<i<<" ";

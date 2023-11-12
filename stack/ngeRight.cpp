@@ -27,16 +27,16 @@ void solve(){
 	for(int i=(n-1); i>=0; i--){
 
 
+		// if(stk.empty()) ans.pb(-1);
+		// else if(!stk.empty() && stk.top()>arr[i]) ans.push_back(stk.top());
+		// else{
+		while(!stk.empty() && stk.top()<=arr[i]){
+			stk.pop();
+		}
+		
 		if(stk.empty()) ans.pb(-1);
-		else if(!stk.empty() && stk.top()>arr[i]) ans.push_back(stk.top());
-		else{
-			while(!stk.empty() && stk.top()<=arr[i]){
-				stk.pop();
-			}
-			
-			if(stk.empty()) ans.pb(-1);
-			else ans.push_back(stk.top());
-		} 
+		else ans.push_back(stk.top());
+		// } 
 		stk.push(arr[i]);
 	}
 

@@ -1,0 +1,16 @@
+dp stands for dynamic programming
+
+why dp?
+
+overlapping sub-problems
+try all cases
+find min/max from all cases
+
+ways to solve problem using dp :
+memoization - bottom up approach (max case to base case) - requires stack space
+tabulation - top down appraoch (base case to max case) - interative method
+
+level - current level
+choice - options/choices from current level
+check - is in betn bounds
+move - change level according to selected choice

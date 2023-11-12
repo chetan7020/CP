@@ -14,8 +14,6 @@ void solve(){
 
 	int arr[] = {4 ,7, 8, 2 ,3 ,1};
 
-	// ans = -1 -1 -1 60 60 60 80
-
 	int n=7;
 
 	stack<int> stk;

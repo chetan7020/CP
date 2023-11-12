@@ -33,7 +33,7 @@ void solve(){
 
 	while(i<=(n-1) && j>=0){
 
-		if((arr[i]+arr2[j]) <= x) i++;
+		if((arr[i]+arr2[j]) < x) i++;
 		else j--;
 
 		if((arr[i]+arr2[j] ==x)) {
@@ -107,13 +107,15 @@ signed main(){
 	freopen("output.txt", "w", stdout);
 #endif
 
-	int t;
-	cin>>t;
+	// int t;
+	// cin>>t;
 
-	while(t--){
-		solve();
-		cout<<endl;
-	}
+	// while(t--){
+	// 	solve();
+	// 	cout<<endl;
+	// }
+
+	solve();
 
 	return 0;
 

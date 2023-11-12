@@ -7,92 +7,85 @@ Build | ..... | Peace
 #include<bits/stdc++.h>
 #define endl "\n"
 #define pb push_back
+#define int long long
+#define fore(i, a, b) for(int i = (a); i < (b); i++)
+#define fori(i, a, b) for(int i = (a); i <= (b); i++)
+
 
 using namespace std;
 
 void solve(){
-	int n;
-	cin>>n;
+	int n; cin>>n;
 	vector<int> arr(n);
 
-	for(int i=0; i<n; i++){
-		int ele;
-		cin>>ele;
-		arr[i]=ele;
-	}
-  	stack<int> lse, rse;
-	vector<int> lseArr(n), rseArr(n);
+	fore(i, 0, n) cin>>arr[i];
+
+	stack<int> st;
+
+	vector<int> arrRight(n), arrLeft(n);
 
 	for(int i=0; i<n; i++){
-		while(!lse.empty() && arr[lse.top()]>=arr[i]) lse.pop();
-		if(lse.empty()) lseArr[i]=n;
-		else lseArr[i]=lse.top();
-		lse.push(i);
+		while(!st.empty() && arr[st.top()]>=arr[i]) st.pop();
 
-		while(!rse.empty() && arr[rse.top()]>=arr[n-i-1]) rse.pop();
-		if(rse.empty()) rseArr[n-i-1]=n;
-		else rseArr[n-i-1]=rse.top();
-		rse.push(n-i-1);
+		if(st.empty()) arrLeft[i]= -1;
+		else arrLeft[i]= st.top();
+
+		st.push(i);
 	}
 
-	cout<<"arr : ";
-	for(auto i:arr){
-		cout<<i<<" ";
-	}
+	while(st.empty()) st.pop();
 
-	cout<<endl<<"lseArr : ";
-	for(auto i: lseArr){
-		if(i!=n) cout<<arr[i]<<" : "<<i<<" "<<endl;
-		else cout<<i<<" "<<endl;
-	}
+	for(int i=(n-1); i>=0; i--){
+		while(!st.empty() && arr[st.top()]>=arr[i]) st.pop();
 
+		if(st.empty()) arrRight[i]= -1;
+		else arrRight[i]= st.top();
 
-	cout<<endl<<"rseArr : ";
-	for(auto i: rseArr){
-		if(i!=n) cout<<arr[i]<<" : "<<i<<" "<<endl;
-		else cout<<i<<" "<<endl;
+		st.push(i);
 	}
+	for(int i: arrRight) cout<<i<<" ";
+
+	cout<<endl;
+
+	for(int i: arrLeft) cout<<i<<" ";
 
 	vector<int> ans(n);
 
 	for(int i=0; i<n; i++){
-		if(lseArr[i]==n && rseArr[i]==n) ans[i]=-1;
-		else {
-			if(lseArr[i]==n || rseArr[i]==n){
-				if(lseArr[i]!=n) ans[i]=lseArr[i];
-				if(rseArr[i]!=n) ans[i]=rseArr[i];
-			}else{
-				if(arr[lseArr[i]]!=arr[rseArr[i]]) {
-					if(arr[lseArr[i]]<arr[rseArr[i]]){
-						ans[i]=lseArr[i];
-					}else ans[i]=rseArr[i];
-				}else ans[i]=min(lseArr[i], rseArr[i]);
-			}
+		if(arrLeft[i]==-1 || arrRight[i]==-1){
+			ans[i]= max(arrRight[i], arrLeft[i]);
+		}else{
+			
+			// if(arr[arrLeft[i]]==arr[arrRight[i]]){
+			// 	ans[i]= min(arrRight[i], arrLeft[i]);
+			// }else{
+			// 	if(arr[arrLeft[i]]>arr[arrRight[i]]){
+			// 		ans[i]= arrRight[i];
+			// 	}else ans[i]= arrLeft[i];
+			// }
 		}
 	}
 
-	cout<<endl<<"ans : ";
-	for(auto i: ans){
-		cout<<i<<" ";
-	}
+	cout<<endl;
+
+	for(int i: ans) cout<<i<<" ";
 }
 
-int main(){
+signed main(){
 
 #ifndef ONLINE_JUDGE
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
 
+	// int t;
+	// cin>>t;
 
-	int t;
-	cin>>t;
+	// while(t--){
+	// 	cout<<solve()<<endl;
+	// }
 
-	while(t--){
-		solve();
-
-		cout<<endl;
-	}
+	solve();
 
 	return 0;
 

@@ -1,0 +1,843 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"fore"
+			],
+			[
+				"min",
+				"minPossibleR"
+			],
+			[
+				"ap",
+				"appli"
+			],
+			[
+				"app",
+				"appli"
+			],
+			[
+				"cnt",
+				"cnt2"
+			],
+			[
+				"cn",
+				"cnt1"
+			],
+			[
+				"arr",
+				"arrLeft"
+			],
+			[
+				"vec",
+				"vector\tstd::vector"
+			],
+			[
+				"fo",
+				"fore"
+			],
+			[
+				"en",
+				"endl"
+			],
+			[
+				"re",
+				"revArr"
+			],
+			[
+				"su",
+				"sum"
+			],
+			[
+				"do",
+				"double"
+			],
+			[
+				"nu",
+				"num1"
+			],
+			[
+				"num",
+				"num1"
+			],
+			[
+				"n",
+				"num1"
+			],
+			[
+				"v",
+				"vector"
+			],
+			[
+				"max",
+				"maxi1"
+			],
+			[
+				"ma",
+				"maxi1"
+			],
+			[
+				"maxi",
+				"maxi1"
+			],
+			[
+				"se",
+				"second"
+			],
+			[
+				"pus",
+				"push_back"
+			],
+			[
+				"ro",
+				"roomNumbers"
+			],
+			[
+				"roo",
+				"roomNumbers"
+			],
+			[
+				"room",
+				"roomNumbers"
+			],
+			[
+				"cu",
+				"curr"
+			],
+			[
+				"bn",
+				"binarySearch\tbinarySearch"
+			],
+			[
+				"ar",
+				"arr"
+			],
+			[
+				"a",
+				"aTokDis"
+			],
+			[
+				"di",
+				"directDis"
+			],
+			[
+				"sum",
+				"sumA"
+			],
+			[
+				"INT_",
+				"INT_MIN"
+			],
+			[
+				"INT",
+				"INT_MIN"
+			],
+			[
+				"mi",
+				"mini"
+			],
+			[
+				"fi",
+				"first"
+			],
+			[
+				"vi",
+				"vi"
+			],
+			[
+				"so",
+				"solve"
+			],
+			[
+				"bina",
+				"binaryTreeNode\tbinaryTreeNode"
+			],
+			[
+				"rs",
+				"rseArr"
+			],
+			[
+				"ls",
+				"lseArr"
+			],
+			[
+				"A",
+				"nslArr"
+			],
+			[
+				"fl",
+				"flag2"
+			],
+			[
+				"mer",
+				"merger"
+			],
+			[
+				"ns",
+				"nsl"
+			],
+			[
+				"p",
+				"push"
+			],
+			[
+				"st",
+				"stk"
+			],
+			[
+				"s",
+				"second"
+			],
+			[
+				"xori",
+				"xori1"
+			],
+			[
+				"xo",
+				"xori1"
+			],
+			[
+				"fre",
+				"freq"
+			],
+			[
+				"N",
+				"nToOne"
+			],
+			[
+				"c",
+				"cpSimple\tcpSimple"
+			],
+			[
+				"cou",
+				"countElements"
+			],
+			[
+				"ne",
+				"next"
+			],
+			[
+				"fr",
+				"freq"
+			],
+			[
+				"is",
+				"isPalindrome"
+			],
+			[
+				"m",
+				"MyFrame"
+			],
+			[
+				"co",
+				"conn"
+			],
+			[
+				"erro",
+				"error_reporting()"
+			],
+			[
+				"_",
+				"$_GET"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"ac",
+				"action"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"pr",
+				"println"
+			],
+			[
+				"el",
+				"elif"
+			],
+			[
+				"o",
+				"od"
+			],
+			[
+				"sy",
+				"System"
+			],
+			[
+				"i",
+				"im"
+			],
+			[
+				"mysqli_",
+				"mysqli_connect"
+			],
+			[
+				"mysqli",
+				"mysqli_connect()"
+			],
+			[
+				"my",
+				"mysql_error()"
+			],
+			[
+				"e",
+				"echo"
+			],
+			[
+				"ec",
+				"echo"
+			],
+			[
+				"ech",
+				"echo"
+			],
+			[
+				"h",
+				"h2"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"sta",
+				"static_ex"
+			],
+			[
+				"glo",
+				"globals"
+			],
+			[
+				"gl",
+				"globals"
+			],
+			[
+				"echo",
+				"echo()"
+			],
+			[
+				"fu",
+				"fun"
+			],
+			[
+				"ARR",
+				"array()"
+			],
+			[
+				"ca",
+				"catch"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"F",
+				"Frame"
+			],
+			[
+				"St",
+				"String"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/CP/Codes/input.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/CP/Codes/output.txt",
+			"settings":
+			{
+				"buffer_size": 5,
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"left_delete",
+					null,
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAFAAAASGVsbG8",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAA8L8"
+				]
+			]
+		}
+	],
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				"Syntax Check"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"toogle",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Install Package Control"
+			],
+			[
+				"",
+				"Arithmetic"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/CP/Codes",
+		"/D/CP/Codes/dp",
+		"/D/CP/Codes/two pointer"
+	],
+	"file_history":
+	[
+		"/D/CP/Codes/dp/frogJump.cpp",
+		"/D/CP/Codes/dp/climbStairs.cpp",
+		"/D/CP/Codes/dp/output.txt",
+		"/D/CP/Codes/dp/input.txt",
+		"/D/CP/Codes/two pointer/input.txt",
+		"/D/CP/Codes/two pointer/output.txt",
+		"/D/CP/Codes/dp/fibo.cpp",
+		"/D/CP/Codes/two pointer/freebies.cpp",
+		"/D/CP/Codes/cses/output.txt",
+		"/D/CP/Codes/cses/input.txt",
+		"/D/CP/Codes/cses/NearestSmallerValues.cpp",
+		"/D/CP/Codes/cses/DistinctNumbers.cpp",
+		"/D/CP/Codes/two pointer/CellularNetwork.cpp",
+		"/D/CP/Codes/stack/ngeLeft.cpp",
+		"/D/CP/Codes/stack/nse.cpp",
+		"/D/CP/Codes/two pointer/SubarrayDistinctValues.cpp",
+		"/D/CP/Codes/stack/paranthesis.cpp",
+		"/D/CP/Codes/two pointer/subArraySum1.cpp",
+		"/D/CP/Codes/two pointer/sumOfThree.cpp",
+		"/D/CP/Codes/two pointer/sumOfTwo.cpp",
+		"/D/CP/Codes/two pointer/sumTwo.cpp",
+		"/D/CP/Codes/two pointer/Books.cpp",
+		"/D/CP/Codes/cses/Apartments.cpp",
+		"/D/CP/Codes/stack/NearestSmallerTower.cpp",
+		"/D/CP/Codes/stack/maxRecArea.cpp",
+		"/D/CP/Codes/stack/maxInWindow.cpp",
+		"/D/CP/Codes/stack/ngeRight.cpp",
+		"/D/CP/Codes/stack/TalesOfSort.cpp",
+		"/D/CP/Codes/CF/output.txt",
+		"/D/CP/Codes/CF/input.txt",
+		"/D/CP/Codes/CF/rps.cpp",
+		"/D/CP/Codes/Binary Search/input.txt",
+		"/D/CP/Codes/Binary Search/output.txt",
+		"/D/CP/Codes/Binary Search/smallerSum.cpp",
+		"/D/CP/Codes/stack/output.txt",
+		"/D/CP/Codes/stack/input.txt",
+		"/D/CP/Codes/greedy/twoBracket.cpp",
+		"/D/CP/Codes/greedy/input.txt",
+		"/D/CP/Codes/greedy/output.txt",
+		"/D/CP/Codes/sliding window/output.txt",
+		"/D/CP/Codes/sliding window/input.txt",
+		"/D/CP/Codes/sliding window/kDistinct.cpp",
+		"/D/CP/Codes/AZ/Partial Sum/partialSum.cpp",
+		"/D/CP/Codes/AZ/Partial Sum/preSum.cpp",
+		"/D/CP/Codes/AZ/Partial Sum/preSum_AP.cpp",
+		"/D/CP/Codes/sliding window/smallestStringWithoutDupli.cpp",
+		"/D/CP/Codes/sliding window/longestStringWithoutDupli.cpp",
+		"/D/CP/Codes/sliding window/longestSumNeg.cpp",
+		"/D/CP/Codes/Linked List/palindromeLL.cpp",
+		"/D/CP/Codes/Binary Tree/Basic.cpp",
+		"/D/CP/Codes/sliding window/smallestWindowContainingAllChar.cpp",
+		"/D/CP/Codes/preSum & postSum/breedCounting.cpp",
+		"/D/CP/Codes/preSum & postSum/input.txt",
+		"/D/CP/Codes/preSum & postSum/output.txt",
+		"/D/CP/Codes/preSum & postSum/exclusionInclusion.cpp",
+		"/D/CP/Codes/two pointer/temp.cpp",
+		"/D/CP/Codes/two pointer/segmentNumberGreaterThan.cpp",
+		"/D/CP/Codes/CF/TreasureChest.cpp",
+		"/D/CP/Codes/CF/pageFaultLRU.cpp",
+		"/D/CP/Codes/CF/MoneyTrees.cpp",
+		"/D/CP/Codes/sliding window/MoneyTrees.cpp",
+		"/D/CP/Codes/sliding window/firstNegi.cpp",
+		"/D/CP/Codes/dp/temp.cpp",
+		"/D/CP/Codes/dp/temp2.cpp",
+		"/D/CP/Codes/dp/climbStairs3.cpp",
+		"/D/CP/Codes/dp/notes.txt",
+		"/D/CP/Codes/recurssion/input.txt",
+		"/D/CP/Codes/recurssion/output.txt",
+		"/D/CP/Codes/recurssion/temp.py",
+		"/D/CP/Codes/recurssion/temp.cpp",
+		"/D/CP/Codes/recurssion/fibbo.cpp",
+		"/D/CP/Codes/recurssion/checkPal.cpp",
+		"/D/CP/Codes/recurssion/revArr.cpp",
+		"/D/CP/Codes/recurssion/sumPara.cpp",
+		"/D/CP/Codes/recurssion/checkArrSorted.cpp",
+		"/D/CP/Codes/CS/output.txt",
+		"/D/CP/Codes/CS/input.txt",
+		"/D/CP/Codes/CS/temp.cpp",
+		"/D/CP/Codes/CS/SantaChocolates.cpp",
+		"/D/CP/Codes/CS/PizzaCutting.cpp",
+		"/D/CP/Codes/CS/DoubleRent.cpp",
+		"/D/CP/Codes/CF/searchSubString.cpp",
+		"/D/CP/Codes/Binary Search/mountainArray.cpp",
+		"/D/CP/Codes/CS/diceNumber.cpp",
+		"/D/CP/Codes/CS/sundayBrunch.cpp",
+		"/D/CP/Codes/CS/octoberMarathon.cpp",
+		"/D/CP/Codes/CF/fearDark.cpp",
+		"/D/CP/Codes/CF/sumThree.cpp",
+		"/D/CP/Codes/CF/jellyfishUndertale.cpp",
+		"/D/CP/Codes/CF/test.cpp",
+		"/D/CP/Codes/CF/TheManWhoBecameGod.cpp",
+		"/D/CP/Codes/CF/permuDiff.cpp",
+		"/D/CP/Codes/two pointer/sumThree.cpp",
+		"/D/CP/Codes/two pointer/physicsPractical.cpp",
+		"/D/CP/Codes/number theory/output.txt",
+		"/D/CP/Codes/number theory/temp.cpp",
+		"/D/CP/Codes/number theory/input.txt",
+		"/D/CP/Codes/number theory/moduloArithmetic.cpp",
+		"/D/CP/Codes/number theory/primarilityTesting.cpp",
+		"/D/CP/Codes/two pointer/letters.cpp",
+		"/D/CP/Codes/two pointer/lectureSleep.cpp",
+		"/D/CP/Codes/two pointer/traffic.cpp",
+		"/D/CP/Codes/Binary Search/bookAllocation.cpp",
+		"/D/CP/Codes/two pointer/segmentNumberLessThanEqualTo.cpp",
+		"/D/CP/Codes/input.txt",
+		"/D/CP/Codes/two pointer/equalNumber.cpp",
+		"/D/CP/Codes/two pointer/segmentNumber.cpp",
+		"/D/CP/Codes/McAfee Security Scan Plus.lnk",
+		"/E/CP/Codes/two pointer/input.txt",
+		"/E/CP/Codes/two pointer/sumOfTwo.cpp",
+		"/E/CP/Codes/two pointer/mergeTwoSorted.cpp",
+		"/E/CP/Codes/two pointer/output.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/two pointer/output.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/two pointer/input.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/two pointer/sumOfTwo.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CS/input.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CS/output.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CS/bitPlay.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CS/sportsSection.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/output.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/input.txt",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/vasilijeCacak.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CS/stamps.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/aleksaStack.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/dytonaCost.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/traveling.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/buildingAquarium.cpp",
+		"/C/Users/chetan/OneDrive/Desktop/CP/CF/chipsBoard.cpp"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "D:\\CP\\Codes"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/CP/Codes/input.txt",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "/D/CP/Codes/output.txt",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 41.3333333333
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.651219512195,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 32.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\xampp\\htdocs\\php_post_marks.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 368.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

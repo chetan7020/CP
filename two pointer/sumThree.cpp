@@ -25,7 +25,7 @@ bool solve(){
 
 	for(int i=0; i<n; i++){
 		for(int j=i+1; j<n; j++){
-		    int lo=j+1, hi=n-1, rem=x-(arr[i]+arr[j]), ans=-1;
+		    int lo=j+1, hi=n-1, b=arr[i]+k, ans=-1;
 		    
 		    while(lo<=hi){  
 		        int mid = lo+(hi-lo)/2;
