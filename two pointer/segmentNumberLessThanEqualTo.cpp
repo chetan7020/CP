@@ -24,7 +24,7 @@ int solve(){
 	while(j<n){
 		sum+=arr[j];
 
-		while(sum>s){
+		while(i<=j && sum>s){
 			sum-=arr[i];
 			i++;
 		}
@@ -40,8 +40,8 @@ int solve(){
 signed main(){
 
 #ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+    freopen("D:\\CP\\Codes\\input.txt", "r", stdin);
+    freopen("D:\\CP\\Codes\\output.txt", "w", stdout);
 #endif
 
 	cout<<solve();

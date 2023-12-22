@@ -7,7 +7,7 @@ Build | ..... | Peace
 #include<bits/stdc++.h>
 #define endl "\n"
 #define pb push_back
-#define int long long
+// #define int long long
 
 using namespace std;
 
@@ -53,13 +53,30 @@ int f3(int n, vector<int> &arr, vector<int> &dp){ //tabulation
 // 	return dp[n-1];
 // }
 
-int solve(){
-		int n; cin>>n;
+int f4(vector<int> &a, vector<int> &dp, int lvl, int n){
+	if(lvl>=n) return INT_MAX;
+
+	if(lvl==n-1) return 0;
+
+	if(dp[lvl]!=-1) return dp[lvl];
+
+	int ans= abs(a[lvl]-a[lvl+1])+f4(a, dp, lvl+1, n);
+	
+	if(lvl+2<n)
+	ans= min(ans, abs(a[lvl]-a[lvl+2])+f4(a, dp, lvl+2, n));
+
+	return dp[lvl]= ans;
+}
+
+void solve(){
+	int n; cin>>n;
 	vector<int> arr(n), dp(n+1, -1);
 	for(int i=0; i<n; i++) cin>>arr[i];
-	cout<<f(n-1, arr)<<endl;
-	cout<<f2(n-1, arr, dp)<<endl;
-	cout<<f3(n-1, arr, dp)<<endl;
+	// cout<<f(n-1, arr)<<endl;
+	// cout<<f2(n-1, arr, dp)<<endl;
+	// cout<<f3(n-1, arr, dp)<<endl;
+
+	cout<<f4(arr, dp, 0, n);
 
 }
 
@@ -70,9 +87,9 @@ signed main(){
     freopen("D:\\CP\\Codes\\output.txt", "w", stdout);
 #endif
 
-	// solve();
+	solve();
 
-	cout<<"Hello";
+	// cout<<"Hello";
 
 	// int t;
 	// cin>>t;

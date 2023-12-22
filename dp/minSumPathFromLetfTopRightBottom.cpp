@@ -2,8 +2,6 @@
 
 Build | ..... | Peace
 
-cpy mat kar bc
-
 */
 
 #include<bits/stdc++.h>

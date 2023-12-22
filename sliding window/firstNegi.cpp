@@ -30,7 +30,6 @@ void firstNegi(){
 				ans.push_back(ele);
 			}
 			if(a[i]==neg.front()) neg.pop();
-			// cout<<i<<" "<<j<<endl;
 			i++;
 		}
 		j++; 	

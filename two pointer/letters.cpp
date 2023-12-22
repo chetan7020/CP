@@ -25,10 +25,7 @@ void solve(){
 
 	for(int i=1; i<=n; i++){
 		preSum[i]=preSum[i-1]+rooms[i-1];
-		// cout<<rooms[i-1]<<" ";
 	}
-
-	// for(int i: preSum) cout<<i<<" ";
 
 
 	int i=0, j=1;
