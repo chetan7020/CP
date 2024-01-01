@@ -1,7 +1,6 @@
 /*
 
-Build | ..... | Peace
-
+Build | ..... | Peace	
 
 */
 
@@ -42,12 +41,35 @@ void solve(){
 	
 	for(int i=0; i<n; i++){
 		for(int j=0; j<m; j++){
-			cin>>a[i][j], cout<<a[i][j]<<" ";
+			cin>>a[i][j];
+			// cout<<a[i][j]<<" ";
 		}
-		cout<<endl;
+		// cout<<endl;
 	}
 
-	cout<<f(0,0);
+	// cout<<f(0,0);
+
+    // cout<<endl;
+
+
+    dp[0][0]=a[0][0];
+    for(int j=1; j<m; j++) dp[0][j]=a[0][j]+dp[0][j-1];
+    for(int i=1; i<n; i++) dp[i][0]=a[i][0]+dp[i-1][0];
+
+    for(int i=1; i<n; i++){
+    	for(int j=1; j<m; j++){
+    		dp[i][j]=a[i][j]+min(dp[i-1][j], dp[i][j-1]);
+    	}
+    }
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cout<<dp[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    cout<<dp[n-1][m-1];
 }
 
 signed main(){

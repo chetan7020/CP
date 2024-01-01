@@ -4,6 +4,8 @@ Build | ..... | Peace
 
 cpy mat kar bc
 
+https://codeforces.com/problemset/problem/1742/E
+
 */
 
 #include<bits/stdc++.h>
@@ -18,48 +20,42 @@ cpy mat kar bc
 
 using namespace std;
 
+void solve(){
+	int n, m; cin>>n>>m;
 
-bool dfs(int vertex, int par, vector<vector<int>> &g, vector<int> &v){
+	vector<int>a(n+1), b(m), preMax(n+1);;
 
-	// cout<<vertex<<" ";
-	
-	v[vertex]=1;
+	a[0]=0;
+	preMax[0]=0;
 
-	bool ans=false;
+	int mx=-1;
 
-	for(int child: g[vertex]){
-		if(v[child]==1){
-			if(child==par) continue;
-			return true;
-		}
-		ans |= dfs(child, vertex, g, v);
+	for(int i=1; i<=n; i++) {
+		cin>>a[i];
+		mx=max(mx, a[i]);
+		preMax[i]=mx;
+		a[i]+=a[i-1];
 	}
 
-	return ans;
-}
+	for(int i=0; i<m; i++) cin>>b[i];
 
-void solve(){
-	int n,m; cin>>n>>m;
+	// for(int i: a) cout<<i<<" ";
 
-	vector<vector<int>> g(n);
-	vector<int> v(n, 0);
+	// cout<<endl;
+
+	// for(int i: preMax) cout<<i<<" ";
+
+	// cout<<endl;
 
 	for(int i=0; i<m; i++){
-		int x,y; cin>>x>>y;
-		g[x].pb(y);
-		g[y].pb(x);
+		auto it= upper_bound(preMax.begin(), preMax.end(), b[i]);
+
+		it--;
+
+		cout<<a[(it-preMax.begin())]<<" ";
 	}
 
-	bool ans=false;
-
-	for(int i=0; i<n; i++){
-		if(v[i]!=1){
-			ans |= dfs(i, -1, g, v);
-		}
-	}
-
-	if(ans) cout<<"E";
-	else cout<<"NE";
+	cout<<endl;
 }
 
 signed main(){
@@ -69,7 +65,10 @@ signed main(){
     freopen("D:\\CP\\Codes\\output.txt", "w", stdout);
 #endif
 
-    solve();
+	int t;
+	cin>>t;
+
+	while(t--) solve();
 
 	return 0;
 

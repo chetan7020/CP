@@ -27,7 +27,7 @@ int f(int i, int j) {
     if(i>n || j>m) return 0;
 
     //base case
-    if(i==n && j==m) return 1;
+    if(i==n-1&& j==m-1) return 1;
 
     //cache check
     if(dp[i][j]!=-1) return dp[i][j];
@@ -42,9 +42,18 @@ int f(int i, int j) {
 void solve(){
 	cin>>n>>m;
 
-    cout<<f(1,1);
+    cout<<f(0,0);
 
     // cout<<"A";
+
+    cout<<endl;
+
+    for(int i=0; i<n+1; i++){
+        for(int j=0; j<m+1; j++){
+            cout<<dp[i][j]<<" ";
+        }
+        cout<<endl;
+    }
 }
 
 signed main(){
