@@ -27,7 +27,7 @@ int f(int lvl, int last) {
     // cache check
     if (dp[lvl][last] != -1) return dp[lvl][last];
 
-    int maxi = INT_MIN;
+    int maxi = LLONG_MIN;
 
     for (int i = 0; i < 3; i++) {
         if (last == i) continue;

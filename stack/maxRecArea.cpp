@@ -85,7 +85,6 @@ int largestRectangle() {
 
 	for(int i=0; i<n; i++){
 		int width = ((nsrArr[i]-nslArr[i]-1)*heights[i]);
-		cout<<area<<" ";
 		maxi=max(maxi, width);
 	}
 

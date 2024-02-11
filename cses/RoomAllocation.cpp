@@ -26,7 +26,7 @@ void solve(){
 		int x,y; cin>>x>>y;
 
 		a.pb({x, 1});
-		a.pb({y, -1});
+		a.pb({y+1, -1});
 	}
 
 	srt(a);
@@ -36,9 +36,10 @@ void solve(){
 	for(auto i: a){
 		curr+=i.ss;
 		mx=max(mx,curr);
+		cout<<mx<<" ";
 	}
 
-	cout<<mx;
+	cout<<endl<<mx;
 	// for(int i)
 }
 

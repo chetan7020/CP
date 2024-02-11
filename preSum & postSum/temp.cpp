@@ -2,44 +2,105 @@
 
 Build | ..... | Peace
 
-cpy mat kar bc
-
 */
 
 #include<bits/stdc++.h>
+
+
+//----------------------- MACRO START ---------------------------
+
 #define endl "\n"
 #define pb push_back
 #define ff first
 #define ss second
 #define int long long
-#define srt(a) sort(a.begin(), a.end())
+
 #define fore(i, a, b) for(int i = (a); i < (b); i++)
 #define fori(i, a, b) for(int i = (a); i <= (b); i++)
+
+#define sum(a) accumulate(a.begin(), a.end(), 0LL)
+#define srt(a) sort(a.begin(), a.end())
+#define rev(a) reverse(a.begin(), a.end())
+#define maxi(a) *max_element(a.begin(), a.end())
+#define mini(a) *min_element(a.begin(), a.end())
+
+#define direc_4 vector<pair<int,int>> {{0, 1}, {0, -1}, {-1, 0}, {1, 0}}
+#define direc_8 vector<pair<int,int>> {{0, 1}, {0, -1}, {-1, 0}, {1, 0}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}}
+
+#define SEIVE(n, sv) \
+    sv[0] = sv[1] = 0; \
+    for (int i = 2; i <= n; i++) { \
+        if (sv[i] == 0) continue; \
+        for (int j = i * i; j <= n; j += i) { \
+            sv[j] = 0; \
+        } \
+    }
+
+//----------------------- MACRO END ---------------------------
 
 using namespace std;
 
 void solve(){
-    int a, b, c; cin >> a >> b >> c;
+	int n, k; cin>>n>>k;
 
-    int ans;
+	int f=1;
+	vector<int>ans;
 
-    if(a == b) ans= c;
-    else if(c == b) ans=a;
-	else if(a == c) ans=b;
+	for(int i=0;i<k+1;i++){
+		if(f) ans.pb(1);
+		else ans.pb(0);
 
-	cout<<ans<<endl;
+		f=f^1;
+	}
+
+	vector<int>e,o;
+
+	for(int i=1;i<=n;i++){
+		if(i%2)o.pb(i);
+		else e.pb(i);
+	}
+
+	vector<int>temp;
+
+	for(int i=0;i<ans.size();i++){
+		if(ans[i]==0){
+			temp.pb(e.back());
+			e.pop_back();
+		}else{
+			temp.pb(o.back());
+			o.pop_back();
+		}
+	}
+
+	for(int i=0;i<temp.size();i++){
+		if(temp[i]%2==0){
+			while(e.size()){
+				cout<<e.back()<<" ";
+				e.pop_back();
+			}
+			cout<<temp[i]<<" ";
+		}else{
+			while(o.size()){
+				cout<<o.back()<<" ";
+				o.pop_back();
+			}
+			cout<<temp[i]<<" ";
+		}
+	}
+
+	cout<<endl;
 }
 
 signed main(){
 
 #ifndef ONLINE_JUDGE
-    freopen("D:\\CP\\Codes\\input.txt", "r", stdin);
-    freopen("D:\\CP\\Codes\\output.txt", "w", stdout);
+    freopen("D://CP//Codes//input.txt", "r", stdin);
+    freopen("D://CP//Codes//output.txt", "w", stdout);
 #endif
 
 
-	int t=1;
-	// cin>>t;
+	int t;
+	cin>>t;
 
 	while(t--) solve();
 
