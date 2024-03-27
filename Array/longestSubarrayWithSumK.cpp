@@ -43,93 +43,30 @@ cpy mat kar bc
 using namespace std;
 
 void solve(){
+	vector<int>a={1,1,2,0,4};
+	int n= 5, k=2;
 
-	int n; cin>>n;
+	int ans=0;
 
-	vector<int>a(n);
-
-	for(int i=0;i<n;i++) cin>>a[i];
-
-	int sm=0;
-
-    while (n) {
-        int m = (n/2);
-        // cout<<n<<endl;
-
-        if (n % 2 != 0) {
-            sm+=a[m];
-            // cout<<a[m]<<endl;
-            a.erase(a.begin() + m);
-        }
-        else {
-
-        	if(n==2){
-        		cout<<a[m]<<" "<<a[m-1]<<endl;
-        		cout<<((a[m] + a[m - 1]) / 2)<<endl;
-        	}
-
-        	// cout<<a[m]<<" "<<a[m-1]<<endl;
-
-        	// cout<<((a[m] + a[m - 1]) / 2)<<endl;
-		    sm += ((a[m] + a[m - 1]) / 2);
-		    if (a[m] <= a[m - 1])a.erase(a.begin() + m);
-		    else a.erase(a.begin() + (m - 1));
-		}
-
-        n--;
-
-    }
-
-	cout<<sm<<endl;
-}
-
-vector<int> adj[100100];
-
-void bfs(int ver, int n){
-	queue<pair<int,int>>q;
-	
-	vector<int>vis(n+1, 0), par(n+1, -1), dis(n+1, 1e9);
-
-	q.push({ver, 0});
-	vis[ver]=1;
-
-	while(q.size()){
-		auto curr = q.front();
-		int node=curr.first;
-		int lvl=curr.second;
-
-		q.pop();
-
-		for(int ch: adj[node]){
-			if(vis[ch]==1) continue;
-
-			dis[ch]=lvl+1;
-			par[ch]=node;
-			vis[ch]=1;
-			q.push({ch, lvl+1});
-		}
-	}
-}
-
-
-void solve2(){
-	int n; cin>>n;
-
-	vector<int>freq(150, 0);
+	vector<int>pre(n, 0);
 
 	for(int i=0;i<n;i++){
-		char c; cin>>c;
-		freq[c]++;
+		pre[i]=a[i];
+		if(i){
+			pre[i]+=pre[i-1];
+		}
 	}
 
-	int m=-1, d=-1;
+	map<int,int>mp;
 
-	for(int i='a';i<('a'+n);i++){
-		if(freq[i]==0) m=i;
-		if(freq[i]==2) d=i;
+	mp[0]=-1;
+
+	for(int i=0;i<n;i++){
+		if(mp.find(pre[i]-k)!=mp.end()) ans=max(ans, (i-mp[pre[i]-k]));
+		if(mp.find(pre[i])==mp.end()) mp[pre[i]]=i;
 	}
 
-	cout<<"["<<char(d)<<" "<<char(m)<<"]"<<endl;
+	cout<<ans<<endl;
 }
 
 signed main(){
@@ -139,8 +76,6 @@ signed main(){
     freopen("D://CP//Codes//output.txt", "w", stdout);
 #endif
 
-
-    // cout<<(-8)/2;
 
 	int t=1;
 	// cin>>t;

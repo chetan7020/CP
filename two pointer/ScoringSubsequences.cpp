@@ -42,34 +42,59 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
-}
+void solve()
+{
+      int n,k;
+      cin>>n>>k;
+      vector<int> v(2*n);
+      map<int,int> f1;
+      map<int,int> f2;
 
-void solve(){
-    int a, b, l; cin>>a>>b>>l;
-
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
+      for(int i=0;i<2*n;i++){
+        cin>>v[i];
+        if(i<n){
+            f1[v[i]]++;
         }
-    }
-    
-    cout << k.size() << endl;
+        else{
+            f2[v[i]]++;
+        }
+
+      }
+
+      vector<int> l;
+      vector<int> r;
+
+      for(auto x:f1){
+        if(f2.find(x.first)!=f2.end() and l.size()<2*k){
+            l.pb(x.first);
+            r.pb(x.first);
+        }
+      }
+      
+
+      for(auto x:f1){
+        if(l.size()<2*k and x.second==2){
+            l.pb(x.first);
+            l.pb(x.first);
+        }
+      }
+
+      for(auto x:f2){
+        if(r.size()<2*k and x.second==2){
+            r.pb(x.first);
+            r.pb(x.first);
+        }
+      }
+
+      for(int i=0;i<l.size();i++){
+        cout<<l[i]<<" ";
+      }
+      cout<<endl;
+       for(int i=0;i<r.size();i++){
+        cout<<r[i]<<" ";
+      }
+      cout<<endl;
+        
 }
 
 signed main(){
@@ -80,11 +105,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

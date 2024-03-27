@@ -42,34 +42,43 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
+int n1, n2, k1, k2;
+
+int f(int taken_g, int taken_r, int con_g, int con_r){
+    if(con_g>k1 || con_r>k2){
+        return 0;
     }
+
+    if(taken_g>n1 || taken_r>n2){
+        return 0;
+    }
+    
+    if(taken_g==n1 && taken_r==n2){
+        return 1;
+    }
+
+    int ans=0;
+
+    for(int i=1;i<=min(n1-taken_g, k1);i++){//take green
+        ans+=f(taken_g+1, taken_r, con_g+1, con_r);
+    }
+
+    for(int i=1;i<=min(n2, k2);i++){//take red
+        ans+=f(taken_g, taken_r+1, con_g, con_r+1);
+    }
+
     return ans;
+
 }
 
-void solve(){
-    int a, b, l; cin>>a>>b>>l;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+void solve(){
+
+	cin>>n1>>n2>>k1>>k2;
+
+    cout<<f(0, 0, 0, 0);
+
+	cout<<endl;
 }
 
 signed main(){
@@ -80,11 +89,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

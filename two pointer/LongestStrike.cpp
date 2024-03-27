@@ -42,34 +42,71 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
-}
+/*
+7 2
+11 11 12 13 13 14 14
+
+11 11 - 0
+
+13 13 - 0
+
+14 14 - 0
+
+13 14 - 1
+
+11 13 14
+
+(r-l)
+
+*/
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n, k; cin>>n>>k;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<int>a(n);
+
+	map<int,int>mp;
+
+	vector<int>freqGreaterThanK;
+
+	for(int &i:a){
+		cin>>i;
+		mp[i]++;
+	}
+
+	for(auto i:mp){
+		if(i.ss>=k){
+			freqGreaterThanK.pb(i.ff);
+		}
+	}
+
+	if(freqGreaterThanK.size()==0){
+		cout<<-1<<endl;
+		return;
+	}
+	
+	srt(freqGreaterThanK);
+
+	int al=0, ar=0;
+
+	int diff=-1;
+
+	int l=0;
+
+	for(int r=1;r<freqGreaterThanK.size();r++){
+		if(freqGreaterThanK[r]-1==freqGreaterThanK[r-1]){
+			if(freqGreaterThanK[r]-freqGreaterThanK[l]>diff){
+				diff=(freqGreaterThanK[r]-freqGreaterThanK[l]);
+				al=l;
+				ar=r;
+			}
+		}else{
+			l=r;
+		}
+	}
+
+
+	cout<<freqGreaterThanK[al]<<" "<<freqGreaterThanK[ar]<<endl;
 }
 
 signed main(){
@@ -80,11 +117,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

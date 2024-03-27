@@ -1,5 +1,9 @@
 /*
 
+3 2 1 4
+
+3
+
 Build | ..... | Peace
 
 cpy mat kar bc
@@ -42,34 +46,22 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
+
+
+void bfs(){
+    queue<int>q;
+
+    while(q.size()){
+        int sz=q.size();
+
+        for(int i=0;i<)
     }
-    return ans;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+
+    cout<<endl;
 }
 
 signed main(){

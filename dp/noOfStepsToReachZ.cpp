@@ -42,34 +42,83 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int cnt=0;
+
+int f(int n, vector<int>&dp, vector<int>&vis){
+	if(n==0){
+		return 0;
+	}
+
+	if(vis[n])return dp[n];
+
+	int ans=1e9;
+
+	if(n%3==0){
+		ans=min(ans, 1+f(n/3, dp, vis));
+	}
+
+	if(n%2==0){
+		ans=min(ans, 1+f(n/2, dp, vis));
+	}
+
+	if(n-1>=0){
+		ans=min(ans, 1+f(n-1, dp, vis));
+	}
+
+	vis[n]=1;
+	return dp[n]=ans;
 }
 
-void solve(){
-    int a, b, l; cin>>a>>b>>l;
+// 0 1 2 3 4 5 6
+// 0 
+int f2(int n){
+	vector<int>dp(n+100);
+	// vector<int>vis(n+100, 0);
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	dp[0]=0;
+
+	for(int i=1;i<=n;i++){
+		int ans=1e8;
+
+		if(i%3==0){
+			// cnt++;
+			ans=min(ans, 1+dp[i/3]);
+		}
+
+		if(i%2==0){
+			// cnt++;
+			ans=min(ans, 1+dp[i/2]);
+		}
+
+		if(i-1>=0){
+			// cnt++;
+			ans=min(ans, 1+dp[i-1]);
+		}
+
+		dp[i]=ans;
+	}
+
+	for(int i=0;i<=n;i++)cout<<dp[i]<<endl;
+
+	return dp[n];
+}
+
+
+void solve(){
+
+
+	int n; cin>>n;
+
+	vector<int>dp(n+100);
+	vector<int>vis(n+100, 0);
+
+	cout<<f(n, dp, vis);
+
+	// for(int i=0;i<=n;i++)cout<<dp[i]<<" "; 
+
+	// cout<<f2(n)<<endl;
+
+	// cout<<cnt;
 }
 
 signed main(){
@@ -80,11 +129,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

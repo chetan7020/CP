@@ -2,8 +2,6 @@
 
 Build | ..... | Peace
 
-cpy mat kar bc
-
 */
 
 #include<bits/stdc++.h>
@@ -42,34 +40,63 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
-}
-
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n, m, k; cin>>n>>m>>k;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<vector<int>>a(n, vector<int>(m, 1));
+	vector<vector<int>>dp(n+100, vector<int>(m+100, 0)); 
+
+	while(k--){
+		int x, y; cin>>x>>y;
+		a[x][y]=0;
+	}
+
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+
+			if(i==0 && j==0){
+				if(a[i][j]==1){
+					dp[i][j]=1;
+				}
+			}else if(i==0){
+				if(a[i][j]==1){
+					dp[i][j]=dp[i][j-1];
+				}
+			}else if(j==0){
+				if(a[i][j]==1){
+					dp[i][j]=dp[i-1][j];
+				}
+			}else{
+				if(a[i][j]==1){
+					if(a[i-1][j]==1){
+						dp[i][j]+=dp[i-1][j];
+					}
+					if(a[i][j-1]==1){
+						dp[i][j]+=dp[i][j-1];
+					}
+				}
+			}
+
+		}
+	}
+
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cout<<dp[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+
+	cout<<endl;
+
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cout<<a[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+
+	cout<<endl<<dp[n-1][m-1]<<endl;
 }
 
 signed main(){
@@ -80,11 +107,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

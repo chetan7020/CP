@@ -42,34 +42,74 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int n, m;
+
+void dijkstra(int src, vector<pair<int,int>>g[]){
+
+	vector<int>vis(n, 0);
+	vector<int>dis(n, 1e9);
+
+	set<pair<int,int>>st;
+
+	st.insert({0, src});
+
+	dis[src]=0;
+	// vis[src]=1;
+
+	while(st.size()){
+		auto node= *st.begin();
+		st.erase(st.begin());
+
+		int v= node.ss;
+		int dist= node.ff;
+
+		if(vis[v]==1)continue;
+		vis[v]=1;
+
+		for(auto child: g[v]){
+
+			int child_v= child.ff;
+			int wt= child.ss;
+
+			if( dis[v]+wt < dis[child_v]){
+				dis[child_v] = dis[v]+wt;
+				st.insert({ dis[child_v], child_v });
+			}
+
+		}
+	}
+
+	for(int i=0;i<n;i++){
+		cout<<dis[i]<<" ";
+	}
 }
 
-void solve(){
-    int a, b, l; cin>>a>>b>>l;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+void solve(){
+	cin>>n>>m;
+
+	vector<pair<int,int>>g[n];
+
+	for(int i=0;i<m;i++){
+		int a,b,c; cin>>a>>b>>c;
+
+
+		g[a].push_back({b,c});
+		// g[b].push_back({a,c});
+	}
+
+
+	// for(auto i:g){
+	// 	for(auto j:i){
+	// 		cout<<j.ff<<" "<<j.ss<<endl;
+	// 	}
+	// }
+
+	dijkstra(0, g);
+
+
+
+	cout<<endl;
 }
 
 signed main(){
@@ -80,11 +120,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

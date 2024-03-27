@@ -29,47 +29,60 @@ cpy mat kar bc
 #define direc_4 vector<pair<int,int>> {{0, 1}, {0, -1}, {-1, 0}, {1, 0}}
 #define direc_8 vector<pair<int,int>> {{0, 1}, {0, -1}, {-1, 0}, {1, 0}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}}
 
-#define SEIVE(n, sv) \
-    sv[0] = sv[1] = 0; \
-    for (int i = 2; i <= n; i++) { \
-        if (sv[i] == 0) continue; \
-        for (int j = i * i; j <= n; j += i) { \
-            sv[j] = 0; \
-        } \
-    }
-
 //----------------------- MACRO END ---------------------------
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int n, k;
+vector<int>a;
+
+int solve(){
+
+	// cin>>n>>k;
+
+	// a.resize(n);
+
+	// for(int &i:a) cin>>i;
+
+	sort(a.begin(), a.end());
+
+	int cnt=0, mx=0;
+
+	for(int i=0;i<n;i++){
+		if(i){
+			if(a[i]-a[i-1]>k) cnt=1;
+			else cnt++;
+		}else cnt++;
+
+		mx=max(mx, cnt);
+	}
+
+	return (n-mx);
 }
 
-void solve(){
-    int a, b, l; cin>>a>>b>>l;
+void s2(){
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    default_random_engine e(seed);
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	cin>>n>>k;
+
+	for(int i=1;i<=n;i+=9) a.push_back(i);
+
+	n+=400;
+
+	for(int i=1;i<=n;i+=11) a.push_back(i);
+
+	n= a.size();
+
+	shuffle(a.begin(), a.end(), e);
+
+	cout<<n<<" "<<k<<endl;
+
+	for(int i:a)cout<<i<<" ";
+
+	cout<<endl;
+
+	cout<<solve()<<endl;
 }
 
 signed main(){
@@ -80,11 +93,12 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t=1;
+	// cin>>t;
 
-    while(t--) solve();
+	// while(t--) cout<<solve()<<endl;
+	while(t--) s2();
 
-    return 0;
+	return 0;
 
 }

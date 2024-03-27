@@ -2,14 +2,9 @@
 
 Build | ..... | Peace
 
-cpy mat kar bc
-
-*/
+*/ 
 
 #include<bits/stdc++.h>
-
-
-//----------------------- MACRO START ---------------------------
 
 #define endl "\n"
 #define pb push_back
@@ -42,34 +37,45 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int n, k;
+vector<int>a;
+
+int check(int mx){
+	int i=1;
+	int placed=0;
+
+	for(;i<n;i++){
+		int dis= a[i]-a[i-1];
+
+		int rq= (((dis+mx-1)/mx)-1);
+
+		placed+=rq;
+	}
+
+	return placed<=k;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	cin>>n>>k;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	a.resize(n);
+
+	for(auto &i:a)cin>>i;
+
+	int lo=1;
+	int hi=1e18;
+	int ans=hi;
+	
+	while(lo<=hi){
+		int mid=lo+(hi-lo)/2;
+	
+		if(check(mid)){
+			ans=mid;
+			hi=mid-1;
+		}else lo=mid+1;
+	}
+
+	cout<<ans<<endl;
 }
 
 signed main(){
@@ -79,12 +85,11 @@ signed main(){
     freopen("D://CP//Codes//output.txt", "w", stdout);
 #endif
 
+	int t;
+	cin>>t;
 
-    int t;
-    cin>>t;
+	while(t--) solve();
 
-    while(t--) solve();
-
-    return 0;
+	return 0;
 
 }

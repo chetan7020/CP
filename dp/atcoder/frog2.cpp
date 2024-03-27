@@ -42,34 +42,34 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int f(int lvl, int n, int k, vector<int>&a, vector<int>&vis, vector<int>&dp){
+	if(lvl==(n-1)) return 0;
+
+	if(vis[lvl])return dp[lvl];
+
+	int ans=INT_MAX;
+
+	for(int i=1;i<=k;i++){
+		if(lvl+i<n) ans=min(ans, abs(a[lvl]-a[lvl+i])+f(lvl+i, n, k, a, vis, dp));
+	}
+
+	// cout<<lvl<<" "<<ans<<endl;
+
+	vis[lvl]=1;
+	return dp[lvl]=ans;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n, k; cin>>n>>k;
+	vector<int>a(n);
+	vector<int>vis(n+100, 0);
+	vector<int>dp(n+100, 0);
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	for(int &i:a)cin>>i;
+
+	cout<<f(0, n, k, a, vis, dp);
+
+	cout<<endl;
 }
 
 signed main(){
@@ -80,11 +80,8 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	solve();
 
-    while(t--) solve();
-
-    return 0;
+	return 0;
 
 }

@@ -42,34 +42,48 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int f(int lvl, int n, vector<int>&a, vector<int>&dp, vector<int>&vis){
+	if(lvl>=n){
+		return 0;
+	}
+
+	if(vis[lvl]){
+		return dp[lvl];
+	}
+
+	int ans=INT_MIN;
+
+	for(int i=0;i<n;i++){
+		int cut= i+1;
+		if(cut+lvl<=n){
+			ans=max(ans, a[i]+ f(lvl+cut, n, a, dp ,vis));
+		}
+	}
+
+	cout<<lvl<<" "<<ans<<endl;
+
+	vis[lvl]=1;
+
+	return dp[lvl]= ans;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n; cin>>n;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<int>a(n);
+
+	for(int &i:a)cin>>i;
+
+	vector<int>dp(n+100);
+	vector<int>vis(n+100, 0);
+
+	// for(int i:a)cout<<i<<" ";
+
+	// cout<<endl;
+
+	cout<<f(0, n, a ,dp, vis);
+
+	cout<<endl;
 }
 
 signed main(){
@@ -80,11 +94,13 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	// int t;
+	// cin>>t;
 
-    while(t--) solve();
+	// while(t--) solve();
 
-    return 0;
+	solve();
+
+	return 0;
 
 }

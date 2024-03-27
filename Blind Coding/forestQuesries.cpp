@@ -15,7 +15,7 @@ cpy mat kar bc
 #define pb push_back
 #define ff first
 #define ss second
-#define int long long
+// #define int long long
 
 #define fore(i, a, b) for(int i = (a); i < (b); i++)
 #define fori(i, a, b) for(int i = (a); i <= (b); i++)
@@ -42,34 +42,34 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
-}
-
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n, q; cin>>n>>q;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<string>a(n);
+
+	for(auto &i:a)cin>>i;
+
+	vector<vector<int>> pre(n+1, vector<int>(n+1, 0));
+
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			if(a[i][j]=='*') pre[i+1][j+1]=1;
+		}
+	}
+
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=n;j++) pre[i][j]+=pre[i][j-1];
+	}
+
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=n;j++) pre[j][i]+=pre[j-1][i];
+	}
+
+	while(q--){
+		int x1,y1,x2,y2; cin>>x1>>y1>>x2>>y2;
+		cout<<pre[x2][y2]- pre[x2][y1-1]- pre[x1-1][y2]+ pre[x1-1][y1-1]<<endl; 
+	}
+
 }
 
 signed main(){
@@ -80,11 +80,10 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t=1;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

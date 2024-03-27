@@ -42,34 +42,36 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+
+
+int cnt(vector<int>&a, int k){
+	int i=0, j=a.size()-1;
+
+	int c=0;
+
+	while(i<j){
+		if(a[i]+a[j]<=k){
+			c+=(j-i);
+			i++;
+		}else j--;
+	}
+
+	return c;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n, l, r;
+	cin>>n>>l>>r;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<int>a(n);
+
+	for(int &i:a)cin>>i;
+
+	srt(a);
+
+	cout<<cnt(a, r)-cnt(a, l-1)<<endl;
+
+	// cout<<endl;
 }
 
 signed main(){
@@ -80,11 +82,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

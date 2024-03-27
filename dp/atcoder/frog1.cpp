@@ -3,7 +3,7 @@
 Build | ..... | Peace
 
 cpy mat kar bc
-
+	
 */
 
 #include<bits/stdc++.h>
@@ -42,34 +42,34 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+
+int f(int lvl, int n, vector<int>&a, vector<int>&dp, vector<int>&vis){
+	if(lvl>=n-1)return 0;
+
+	if(vis[lvl])return dp[lvl];
+
+	int ans=INT_MAX;
+
+	for(int i=1;i<=2;i++){
+		if(lvl+i<n) 	
+	}
+
+	vis[lvl]=1;
+	return dp[lvl]= ans;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n; cin>>n;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<int>a(n);
+	vector<int>dp(n+100);
+	vector<int>vis(n+100);
+
+	for(int &i:a)cin>>i;
+
+	cout<<f(0, n, a, dp, vis);
+
+	cout<<endl;
 }
 
 signed main(){
@@ -79,12 +79,8 @@ signed main(){
     freopen("D://CP//Codes//output.txt", "w", stdout);
 #endif
 
+    solve();
 
-    int t;
-    cin>>t;
-
-    while(t--) solve();
-
-    return 0;
+	return 0;
 
 }

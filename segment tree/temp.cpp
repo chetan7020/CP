@@ -42,34 +42,25 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
-}
-
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+    int n; cin>>n;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
+    // cout<<n<<endl;
+
+    if(n==1){
+        cout<<1<<endl;
+        return;
     }
-    
-    cout << k.size() << endl;
+
+    int ans=(n*2);
+
+    int x=n-1;
+
+    x= (x*(x+1)/2)-1;
+
+    ans+=x;
+
+    cout<<ans<<endl;
 }
 
 signed main(){

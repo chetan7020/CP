@@ -9,8 +9,6 @@ cpy mat kar bc
 #include<bits/stdc++.h>
 
 
-//----------------------- MACRO START ---------------------------
-
 #define endl "\n"
 #define pb push_back
 #define ff first
@@ -42,34 +40,42 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
-}
+int n;
+vector<pair<int,int>>arr,ans;
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	cin>>n;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	for(int i=0;i<n;i++){
+		int a,b;cin>>a>>b;
+		arr.push_back({a,b});
+	}
+
+	sort(arr.begin(), arr.end());
+
+	int st=arr[0].ff, ed=arr[0].ss;
+
+	int i=1;
+
+	for(;i<n;i++){
+		if(arr[i].ff<=ed){
+			st=min(st, arr[i].ff);
+			ed=max(ed, arr[i].ss);
+		}else{
+			ans.push_back({st,ed});
+			cout<<ed-st+1<<" ";
+			st=arr[i].ff;
+			ed=arr[i].ss;
+		}
+	}
+
+	cout<<ed-st+1<<" "<<endl;
+
+	ans.push_back({st,ed});
+
+	for(auto i:ans) cout<<i.ff<<" "<<i.ss<<endl;
+
+	cout<<endl;
 }
 
 signed main(){
@@ -80,11 +86,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t=1;
+	// cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

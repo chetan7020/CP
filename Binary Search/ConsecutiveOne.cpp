@@ -1,9 +1,7 @@
 /*
 
 Build | ..... | Peace
-
-cpy mat kar bc
-
+	
 */
 
 #include<bits/stdc++.h>
@@ -42,34 +40,53 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int n, k;
+vector<int>a;
+
+int f(int sz){
+	int i=0,j=0,cnt=0;
+
+	int f=0;
+
+	while(j<n){
+		cnt+=(a[j]==0);
+
+		if((j-i+1)==sz){
+			// cout<<cnt<<" ";
+			if(cnt<=k) f=1;
+			cnt-=(a[i++]==0);
+		}
+
+		j++;
+	}
+
+	return f;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	cin>>n>>k;
+
+	a.resize(n);
+
+	for(int i=0;i<n;i++)cin>>a[i];
+
+
+	// cout<<f(5);
+	int lo=0;
+	int hi=n;
+	int ans=-1;
+	
+	while(lo<=hi){
+		int mid=lo+(hi-lo)/2;
+	
+		if(f(mid)){
+			ans=mid;
+			lo=mid+1;
+		}else hi=mid-1;
+	}
+
+	cout<<ans<<endl;
 }
 
 signed main(){
@@ -80,11 +97,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

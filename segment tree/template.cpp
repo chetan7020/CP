@@ -2,8 +2,6 @@
 
 Build | ..... | Peace
 
-cpy mat kar bc
-
 */
 
 #include<bits/stdc++.h>
@@ -15,7 +13,7 @@ cpy mat kar bc
 #define pb push_back
 #define ff first
 #define ss second
-#define int long long
+// #define int long long
 
 #define fore(i, a, b) for(int i = (a); i < (b); i++)
 #define fori(i, a, b) for(int i = (a); i <= (b); i++)
@@ -42,34 +40,71 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int n;
+int a[100010], t[400010];
+
+void build(int idx, int l, int r){
+	if(l==r){
+		t[idx]=a[l];
+		return;
+	}
+
+	int mid= (l+r)/2;
+
+	build(idx*2, l, mid);
+	build(idx*2+1, mid+1, r);
+
+	t[idx]= t[idx*2]+ t[idx*2+1];
+}
+
+void update(int idx, int l, int r, int pos, int val){
+	if(pos<l || pos>r) return;
+
+	if(l==r){
+		t[idx]= val;
+		a[l]= val;
+		return;
+	}
+
+	int mid= (l+r)/2;
+
+	update(idx*2, l, mid, pos, val);
+	update(idx*2+1, mid+1, r, pos, val);
+
+	t[idx]= t[idx*2]+ t[idx*2+1];
+}
+
+int query(int idx, int l, int r, int lq, int rq){
+	if(l>rq || r<lq) return 0;
+
+	if(lq<=l && r<=rq) return  t[idx];
+
+	int mid= (l+r)/2;
+
+	return query(idx*2, l, mid, lq, rq) + query(idx*2+1, mid+1, r, lq, rq);
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	cin>>n;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	for(int i=0;i<n;i++)cin>>a[i];
+
+	build(1, 0, n-1);
+
+	int q; cin>>q;
+	while(q--){
+
+		int ch; cin>>ch;
+
+		if(ch==1){
+			int pos, val; cin>>pos>>val;
+			update(1, 0, n-1, pos, val);
+		}else{
+			int lq, rq; cin>>lq>>rq;
+
+			cout<<query(1,0,n-1,lq,rq)<<endl;
+		}
+	}
 }
 
 signed main(){
@@ -79,12 +114,8 @@ signed main(){
     freopen("D://CP//Codes//output.txt", "w", stdout);
 #endif
 
+	solve();
 
-    int t;
-    cin>>t;
-
-    while(t--) solve();
-
-    return 0;
+	return 0;
 
 }

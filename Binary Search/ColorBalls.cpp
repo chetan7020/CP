@@ -1,11 +1,3 @@
-/*
-
-Build | ..... | Peace
-
-cpy mat kar bc
-
-*/
-
 #include<bits/stdc++.h>
 
 
@@ -42,34 +34,40 @@ cpy mat kar bc
 
 using namespace std;
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+int n,k;
+vector<int>a;
+
+map<int,int>mp;
+
+int check(int basket){
+	int cnt=0;
+
+	for(auto i:mp) cnt+=min(i.ss, basket);
+
+	return cnt>=k*basket;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	cin>>n>>k;
+	a.resize(n);
+	mp.clear();
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	for(int i=0;i<n;i++)cin>>a[i], mp[a[i]]++;
+
+	int lo=0;
+	int hi=n;
+	int ans=-1;
+	
+	while(lo<=hi){
+		int mid=lo+(hi-lo)/2;
+	
+		if(check(mid)){
+			ans=mid;
+			lo=mid+1;
+		}else hi=mid-1;
+	}
+
+	cout<<ans<<endl;
 }
 
 signed main(){
@@ -80,11 +78,11 @@ signed main(){
 #endif
 
 
-    int t;
-    cin>>t;
+	int t;
+	cin>>t;
 
-    while(t--) solve();
+	while(t--) solve();
 
-    return 0;
+	return 0;
 
 }

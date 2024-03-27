@@ -41,35 +41,42 @@ cpy mat kar bc
 //----------------------- MACRO END ---------------------------
 
 using namespace std;
+/*
+5
+3 4 5 7 6
 
-long long pw(int b, int ex) {
-    long long ans = 1;
-    for (int i = 0; i < ex; ++i) {
-        ans *= b;
-    }
-    return ans;
+*/
+
+int computeMaxProfit(int i, int j, int multiple, vector<int>&prices){
+
+	if(i>j){
+		return 0;
+	}
+
+	if(i==j){
+		return prices[i]*multiple;
+	}
+
+	int ans=-1e9;
+
+	ans=max(ans, ((prices[i]*multiple)+computeMaxProfit(i+1, j, multiple+1, prices)));
+	ans=max(ans, ((prices[j]*multiple)+computeMaxProfit(i, j-1, multiple+1, prices)));
+
+	return ans;
 }
 
 void solve(){
-    int a, b, l; cin>>a>>b>>l;
+	int n; cin>>n;
 
-    unordered_set<int> k;
-    
-    for (int x = 0; ; x++) {
-        long long pa = pw(a, x);
-        if (pa > l) break;
-        
-        for (int y = 0; ; y++) {
-            long long v = pa * pw(b, y);
-            if (v > l) break;
-            
-            if (l % v == 0) {
-                k.insert(l / v);
-            }
-        }
-    }
-    
-    cout << k.size() << endl;
+	vector<int>prices(n);
+
+	for(int &i:prices)cin>>i;
+
+	int i=0, j=n-1, multiple=1;
+
+	cout<<computeMaxProfit(i, j, multiple, prices);
+
+	cout<<endl;
 }
 
 signed main(){
@@ -79,12 +86,11 @@ signed main(){
     freopen("D://CP//Codes//output.txt", "w", stdout);
 #endif
 
+	int t;
+	cin>>t;
 
-    int t;
-    cin>>t;
+	while(t--) solve();
 
-    while(t--) solve();
-
-    return 0;
+	return 0;
 
 }
